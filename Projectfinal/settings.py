@@ -24,7 +24,7 @@ SECRET_KEY = 'django-insecure-)no&ar$2mg%9-zwx^!zu-unor6%(f)&$vv@72t*77m4a6h(e5^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['django-final.herokuapp.com']
 
 # Application definition
 
@@ -47,6 +47,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware'
 ]
 
 ROOT_URLCONF = 'Projectfinal.urls'
@@ -126,3 +127,5 @@ STATICFILES_DIRS = ['static']
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
+
+STATIC_ROOT=os.path.join(BASE_DIR, 'static')
