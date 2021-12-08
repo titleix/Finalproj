@@ -1,0 +1,45 @@
+body{
+   background-image: url("/static/images/20201008-199WaterSt-2_v1-scaled.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+#contain{
+    width: 400px;
+    margin: 0 auto;
+   background-color: #ffffff10;
+   backdrop-filter: blur(12px);
+   -webkit-backdrop-filter: blur(12px);
+}
+
+.navbar{
+    background-color: #ffffff10;
+   backdrop-filter: blur(12px);
+   -webkit-backdrop-filter: blur(12px);
+    z-index: 99;
+}
+#mainBase{
+    width: 70%;
+    height: 120%;
+    align-content: center;
+}
+
+.not-completed{
+    background-color: white;
+    border: solid silver 1px;
+    border-radius: .25rem;
+    margin: 10px;
+    padding: 10px;
+}
+
+#planner_form{
+    width: 100%;
+}
+
+#bttn{
+text-align: center;
+
+}
+
+

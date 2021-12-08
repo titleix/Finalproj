@@ -1,0 +1,52 @@
+{% extends 'login/homebase.html' %}
+{% load static %}
+
+
+
+{% block body %}
+
+     <div class="jumbotron">
+        <h1>Blogs</h1>
+        <form method="POST" action="{% url 'create' %}">
+            {% csrf_token %}
+            <button class="btn btn-info text-white" style="width:fit-content; padding: 4px; margin:10px;">Create</button>
+        </form>
+    </div>
+
+    <div class="card-columns">
+    {% for forum in forums %}
+        <div class="card box container bg-opacity-75 bg-body">
+            <br>
+            <h5 class="card-title">
+                <h4><u>{{forum.topic}}</u></h4>
+                <div class="card-body container">
+                    <p>{{forum.description}}</p>
+                </div>
+            </h5>
+
+            By: {{forum.name}}
+        <br>
+
+            <hr>
+            <h4>Comments: </h4>
+            <br>
+            {%for discuss in discussions%}
+                {%for i in discuss%}
+                    {% if i.forum == forum %}
+                        <p>{{i.discuss}}</p>
+                        By: {{ i.name }}
+
+                        <hr size="3" width="90%">
+                    {% endif %}
+                {%endfor%}
+            {%endfor%}
+            <form method="POST" action="{% url 'comment' %}">
+                {% csrf_token %}
+                <button class="btn btn-info text-white" style="width:fit-content; padding: 4px; margin:10px;">Comment</button>
+            </form>
+        </div>
+        <br>
+    {% endfor %}
+{% endblock %}
+
+</div>

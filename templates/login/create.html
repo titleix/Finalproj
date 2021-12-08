@@ -1,0 +1,29 @@
+{% extends 'login/homebase.html' %}
+
+{% block body %}
+
+    <div class="container" id="contain">
+        <div class="row">
+            <div class="col">
+                <form class='container' action="{% url 'create' %}" method="POST">
+                    {% csrf_token %}
+                    {{form.as_p}}
+                    <a class="btn btn-info text-light" href="{% url 'home' %}" role="button">Cancel</a>
+                    <input type="submit" class="btn btn-success" value="Submit">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let create_placeholders = document.getElementsByTagName('input')
+        create_placeholders[1].placeholder='Name...';
+        create_placeholders[2].placeholder='Title';
+
+        for (i in create_placeholders) {
+            let create_placeholders;
+            create_placeholders[i].className += ' form-control'
+}
+</script>
+
+{% endblock %}
